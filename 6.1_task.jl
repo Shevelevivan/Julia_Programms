@@ -87,6 +87,18 @@ function find_the_start_y!(robot::CoordRobot,side)
     end
 end
 
+function turn_right!(robot, side)
+    if side == Nord
+        return Ost
+    elseif side == Ost
+        return Sud
+    elseif side == Sud
+        return West
+    else
+        return Nord
+    end
+end
+
 function fill_the_perimetr!(robot, side)
     while !ismarker(robot)
         while !isborder(robot, side)
